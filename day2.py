@@ -13,14 +13,13 @@ Spoiler: It wasn't invalidated! In fact it made part 2 a breeze.
 """
 
 gameDict = {}
-cubeColors = ["red", "green", "blue"]
 
 for eachGame in inputLines:
     gameNumber = re.search(r'(Game \d+)', eachGame)
     currentGame = gameNumber.group()
     gameDict.update({currentGame: {"red": "", "green": "", "blue": ""}})
 
-    for eachColor in cubeColors: 
+    for eachColor in ["red", "green", "blue"]: 
         cubeQuant = re.findall(r'(\d|\d\d) {}'.format(eachColor), eachGame)
         x = max([int(x) for x in cubeQuant])
         gameDict[currentGame].update({eachColor: x})
