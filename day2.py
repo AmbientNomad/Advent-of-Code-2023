@@ -22,7 +22,7 @@ for eachGame in inputLines:
     for eachColor in ["red", "green", "blue"]: 
         cubeQuant = re.findall(r'(\d|\d\d) {}'.format(eachColor), eachGame)
         x = max([int(x) for x in cubeQuant]) #Find the highest number from
-                                             #a specific color.
+                                             #the current color.
         gameDict[currentGame].update({eachColor: x})
 
 
